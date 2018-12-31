@@ -1,3 +1,4 @@
+生成20000个1~1000以内的随机数。
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
