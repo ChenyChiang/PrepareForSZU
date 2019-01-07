@@ -63,7 +63,7 @@ int readRequestfile()
 	const char *b="\n[, , ]";
 	sscanf(buff, "%d", &n);
 	char *str = strtok(buff, b);//把数量读掉
-	Request *tres = (Request* )malloc(sizeof(Request) * n);
+	tres = (Request* )malloc(sizeof(Request) * n);//TMD ,这里多了定义.导致tres全局变量无值,导致程序崩溃,调了一天.毙了G
 	for(str = strtok(NULL, b), i = 0; str != NULL; str = strtok(NULL, b), i++)
 	{
 		strcpy((tres+i)->path.ori, str);
