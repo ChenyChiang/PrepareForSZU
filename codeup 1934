@@ -1,0 +1,29 @@
+/*查找元素X
+输入一个数n(1~200),然后输入n个数值各不相同的数,再输入一个值x,输出这个值在这个数组的下标(从0开始,无则为-1)
+样例:
+输入:
+4
+1 2 3 4
+3
+输出:
+2
+*/
+#include<stdio.h>
+#define maxn 200
+int main()
+{
+	int n,arr[maxn];
+	scanf("%d",&n);
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	int k;
+	scanf("%d",&k);
+	for(int i=0;i<n;i++)
+	{
+		if(arr[i]==k)
+			printf("%d\n",i);
+	}
+
+}
