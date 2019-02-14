@@ -1,0 +1,35 @@
+/*
+pat b1022 D进制的A+B
+输入两个非负十进制的整数A B	以及 进制D ,输出A+B的D进制数.
+输入样例:
+123 456 8
+输出样例:
+1103
+*/
+#include<stdio.h>
+#define maxsize 100
+void trans(int n,int d)
+{
+	int top=-1;
+	int stack[maxsize];
+	while(n)
+	{
+		stack[++top]=n%d;
+		n/=d;
+	}
+	while(top>=0)
+	{
+		printf("%d",stack[top]);
+		top--;
+	}
+	printf("\n");
+}
+int main()
+{
+	int a,b,d,res;
+	while(scanf("%d%d%d",&a,&b,&d)!=EOF)
+	{
+		res=a+b;
+		trans(res,d);
+	}
+}
