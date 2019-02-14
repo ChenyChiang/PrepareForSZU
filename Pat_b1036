@@ -1,0 +1,39 @@
+/*
+pat b1036 跟奥巴马一起学编程
+在一行中给出正方形边长N(3<=n<=20)和组成正方形的某种字符c,间隔一个空格
+
+样例输入:
+10 a
+AAAAAAAAAA
+A        A
+A        A
+A        A
+AAAAAAAAAA
+*/
+#include<stdio.h>
+int main()
+{
+	int col,row;char c;
+	scanf("%d %c",&col,&c);
+	if(col%2==1) row=col/2+1;
+	else row=col/2;
+	int i,j;
+	for(i=0;i<col;i++)
+	{
+		printf("%c",c);
+	}
+	printf("\n");
+	for(i=2;i<row;i++)
+	{
+		printf("%c",c);
+		for(j=0;j<col-2;j++) printf(" ");
+		printf("%c\n",c);
+	}
+	for(i=0;i<col;i++)
+	{
+		printf("%c",c);
+	}
+	printf("\n");
+
+	return 0;
+}
